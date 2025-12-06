@@ -1,22 +1,19 @@
-import json
 import logging
+import json
 import azure.functions as func
 
+def main(event: func.EventGridEvent, outputQueueItem: func.Out[str]):
+    logging.info("Event Grid Trigger executed.")
 
-def main(event: func.EventGridEvent, queue_msg: func.Out[str]):
-    logging.info("Processing Event Grid message...")
+    data = event.get_json()
+    blob_url = data.get("url")
+    event_time = event.event_time.isoformat()
 
-    # here am extracting the event payload
-    event_payload = event.get_json()
-    file_location = event_payload.get("url", "Unknown")
-    timestamp = str(event.event_time)
-
-    # here i am preparing message for the queue
-    enriched_payload = {
-        "file_path": file_location,
-        "triggered_at": timestamp,
-        "status": "checked"
+    message = {
+        "blob_url": blob_url,
+        "event_time": event_time,
+        "validated": True
     }
 
-    queue_msg.set(json.dumps(enriched_payload))
-    logging.info(f"Message pushed to queue: {enriched_payload}")
+    outputQueueItem.set(json.dumps(message))
+    logging.info(f"Message pushed to queue: {message}")

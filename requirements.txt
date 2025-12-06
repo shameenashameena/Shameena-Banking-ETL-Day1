@@ -2,3 +2,6 @@ azure-functions
 azure-cosmos
 azure-storage-blob
 pandas
+python-dateutil
+azure-storage-queue
+

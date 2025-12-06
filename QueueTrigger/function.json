@@ -1,0 +1,12 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "name": "msg",
+      "type": "queueTrigger",
+      "queueName": "ingestionqueue",
+      "connection": "SERVER_BUS_CONNECTION_STRING",
+      "direction": "in"
+    }
+  ]
+}
