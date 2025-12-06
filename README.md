@@ -65,6 +65,8 @@ This project focuses on building an **end-to-end Azure Data Pipeline** for banki
 4. **Cosmos DB Storage:**  
    - Database created: `BankDB`.
    - Containers created inside BankDB for storing processed banking data.
+   <img width="556" height="535" alt="image" src="https://github.com/user-attachments/assets/77499435-4da4-4852-acfd-e883d25748f2" />
+
   <img width="1366" height="673" alt="Screenshot (1163)" src="https://github.com/user-attachments/assets/c4af3d91-464c-44c3-83b2-400b1e64d437" />
 
   <img width="1366" height="724" alt="Screenshot (1165)" src="https://github.com/user-attachments/assets/18d8433e-9730-4aca-a47c-0f072a9c7cd2" />
